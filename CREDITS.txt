@@ -1,0 +1,34 @@
+Alpaca Go! sound credits
+
+Crowd (cut and mixed into a loop)
+  "WWS FootballAustriavs.Sweden" by Work With Sounds / Torsten Nilsson
+  https://commons.wikimedia.org/wiki/File:WWS_FootballAustriavs.Sweden.ogg
+  Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+
+Home music
+  "Upbeat City" from Ultimate Game Music Collection by John Leonard French
+  Used under the pack licence, not free to reuse.
+
+Race music (cut and looped)
+  William Tell Overture, Gioachino Rossini, transcribed by Wenzel Sedlak,
+  performed by the United States Marine Corps Band, director Timothy Foley
+  https://commons.wikimedia.org/wiki/File:Gioachino_Rossini,_William_Tell_Overture_(military_band_version,_2000).ogg
+  Public domain
+
+Bugle call
+  "First Call" by Sgt. Codie Lynn Williams, U.S. Marine Corps
+  https://commons.wikimedia.org/wiki/File:First_Call.ogg
+  Public domain
+
+Applause
+  "Applause i" by thore
+  https://commons.wikimedia.org/wiki/File:Applause_i.ogg
+  Public domain
+
+Hooves (cut and looped)
+  "Six Horses Galloping By" by Bruno Auzet, Freesound Community
+  https://commons.wikimedia.org/wiki/File:Six_Horses_Galloping_By.ogg
+  CC0
+
+Commentary voice
+  Generated with Chatterbox and Qwen3, no real caller was recorded.
