@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#3b8ff5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Alpaca Go!">
+<link rel="apple-touch-icon" href="./img/app-icon.png">
 <title>Alpaca Go!</title>
 <meta name="description" content="Raise your alpacas on the ranch, then race them. A prototype you can play free in your browser.">
 <link rel="icon" href="./img/feature/head-4.webp">
@@ -19,21 +23,21 @@
 <link rel="preload" href="./vendor/fonts/LilitaOne-Regular.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="./img/banner/alpaca-go.webp" as="image" fetchpriority="high">
 <link rel="stylesheet" href="./css/style.css">
-<link rel="modulepreload" href="./js/main.c531e9d1b0.js" fetchpriority="high">
+<link rel="modulepreload" href="./js/main.21d47ebb20.js" fetchpriority="high">
 <link rel="preload" href="./models/alpaca.glb" as="fetch" crossorigin>
 <link rel="preload" href="./models/alpaca_lod.glb" as="fetch" crossorigin>
 <link rel="preload" href="./models/ranch-mesh.glb" as="fetch" crossorigin>
+<link rel="stylesheet" href="./css/shell.css">
 </head>
 <body data-lb="off">
 <div id="app">
   <canvas id="game"></canvas>
   <div id="ui"><div id="stage"></div><div id="race"></div><div id="bar"></div></div>
   <div id="flash"></div>
-  <div id="wipe"></div>
   <div id="loading"><img class="ld-art" src="./img/banner/alpaca-go.webp" alt="Alpaca Go!"><div class="ld-bar"><i></i></div><div class="ld-txt">Loading the ranch…</div></div>
   <div id="turn"><img src="./img/banner/alpaca-go.webp" alt="Alpaca Go!"><span>Turn your phone sideways</span></div>
 </div>
 <script>(function(){var f=window.fetch,g=new Promise(function(r){var t=setInterval(function(){if(window.dbg){clearInterval(t);r()}},100)});window.fetch=function(u,o){return /audio\//.test(String(u))?g.then(function(){return f(u,o)}):f(u,o)}})()</script>
-<script type="module" src="./js/main.c531e9d1b0.js"></script>
+<script type="module" src="./js/main.21d47ebb20.js"></script>
 </body>
 </html>

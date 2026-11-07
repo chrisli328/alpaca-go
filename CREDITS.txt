@@ -32,3 +32,17 @@ Hooves (cut and looped)
 
 Commentary voice
   Generated with Chatterbox and Qwen3, no real caller was recorded.
+
+Ranch sounds: carrot crunches, gulp, alpaca hum, water splash, hand in the fleece,
+scissors, wool puff, carrot pulled from the soil, seed sown (audio/feel.mp3)
+  Generated on our own machine with Stable Audio 3 (Stability AI) through
+  audio-studio-mcp; no recording of anyone else was used.
+  Licence: Stability AI Community License (free for commercial use under
+  US$1M total annual revenue).
+  Prompts and seeds: tools/feel_src/*.wav.json; cut by tools/make_feel_audio.py
+
+Button sounds: click, green button, tab, window open and close, pick, no (audio/feel.mp3)
+  Click (14), Click (15), Abstract Click (2), Special & Powerup (43, first 190 ms),
+  Pop (5), Buzz Error (6) from the "Interface And Item Sounds" pack, the same
+  cues our Bug World and Loot & Sail use.
+  Used under the pack licence, not free to reuse. Pack author not recorded on this machine.
