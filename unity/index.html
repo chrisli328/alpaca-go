@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#3b8ff5">
+<title>Alpaca Go!</title>
+<!-- The page for the GitHub Pages build (Build.WebStatic, Tools/web/publish.sh): the game fills the browser window, as the
+     HTML prototype did. The game is landscape; held upright, a phone gets the prototype's "Turn your phone sideways". -->
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #1f6fd0; }
+  #unity-canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; outline: none; touch-action: none; background: #1f6fd0; }
+  #boot, #turn { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+                 padding: 24px; box-sizing: border-box; color: #fff; text-align: center; background: #1f6fd0;
+                 font: 600 16px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  #boot img { width: min(520px, 80vw); max-height: 45vh; object-fit: contain; }
+  #bar { width: min(260px, 70vw); height: 12px; border-radius: 999px; background: rgba(255, 255, 255, .22); overflow: hidden; }
+  #fill { width: 0; height: 100%; background: #ffd23f; transition: width .2s; }
+  #ver, #note { font-weight: 400; font-size: 13px; opacity: .8; }
+  #note a { color: #fff; }
+  #msg { font-weight: 400; font-size: 14px; color: #ffd6d6; max-width: 420px; }
+  #turn { display: none; z-index: 5; font-size: 24px; gap: 24px; }
+  #turn img { width: 100%; }
+  @media (orientation: portrait) and (pointer: coarse) { #turn { display: flex; } }
+</style>
+</head>
+<body>
+<canvas id="unity-canvas" tabindex="-1"></canvas>
+<div id="boot">
+  <img src="banner.webp" alt="Alpaca Go!">
+  <div id="bar"><div id="fill"></div></div>
+  <div id="ver"></div>
+  <!-- The web player cannot run the game's sound engine yet (docs/ADDING-CONTENT.md, "The web build") -->
+  <div id="note">No sound in this web build yet. The HTML prototype has it: <a href="../">play it here</a></div>
+  <div id="msg"></div>
+</div>
+<div id="turn"><img src="banner.webp" alt="Alpaca Go!"><span>Turn your phone sideways</span></div>
+<script>
+  // version.json sits next to this page on the published site (Tools/web/publish.sh writes it): the commit the build is from
+  fetch("version.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (v) {
+    if (v && v.commit) document.getElementById("ver").textContent = "Unity build of commit " + v.commit + " (" + v.date + ")";
+  }).catch(function () {});
+
+  var canvas = document.getElementById("unity-canvas");
+  var config = {
+    arguments: [],
+    dataUrl: "Build/WebStatic.data.unityweb",
+    frameworkUrl: "Build/WebStatic.framework.js.unityweb",
+    codeUrl: "Build/WebStatic.wasm.unityweb",
+    streamingAssetsUrl: "StreamingAssets",
+    companyName: "FINIFUGU",
+    productName: "Alpaca Go!",
+    productVersion: "0.1.0",
+    // phones with a very dense screen draw at 2x at most, to keep the frame rate up
+    devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+  };
+  function fail(message) {
+    document.getElementById("boot").style.display = "flex";
+    document.getElementById("msg").textContent = "The game could not start: " + message;
+  }
+  var script = document.createElement("script");
+  script.src = "Build/WebStatic.loader.js";
+  script.onload = function () {
+    createUnityInstance(canvas, config, function (p) {
+      document.getElementById("fill").style.width = (100 * p) + "%";
+    }).then(function () {
+      document.getElementById("boot").style.display = "none";
+      canvas.focus();
+    }).catch(fail);
+  };
+  script.onerror = function () { fail("the game files did not load"); };
+  document.body.appendChild(script);
+</script>
+</body>
+</html>
